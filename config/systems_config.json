@@ -1,0 +1,66 @@
+{
+    "global": {
+        "retention_days": 5,
+        "function_dirs": {
+            "daily_files": "daily_files",
+            "db_files": "db_files",
+            "output_files": "output_files",
+            "historical_data": "historical_data"
+        },
+        "hash_daily_columns": [
+            "Business Central Contract Number",
+            "Business Central VI",
+            "Plant ID",
+            "Local Contract Number",
+            "MMC Distributor No.",
+            "Distributor"
+        ],
+        "hash_historical_columns": [
+            "Business Central VI",
+            "Business Central Contract Number",
+            "Plant ID",
+            "Purchase UOM Price",
+            "Purchase Order Price Unit of Measure",
+            "Contract Start Date",
+            "Contract End Date",
+            "Target Value of Contract",
+            "Payment Terms",
+            "Freight Terms",
+            "Vendor Part Number",
+            "Distributor Part Number",
+            "Local Contract Number",
+            "MMC Distributor No.",
+            "Distributor",
+            "main_rec_type"
+        ]
+    },
+    "contracts": {
+        "Allscripts": {
+            "working_dir": "contracts/Allscripts",
+            "match_keyword": "Allscripts",
+            "output_format": "csv",
+            "description": "Allscripts contracts processing",
+            "extra_functions": {
+                "spending": {
+                    "enabled": true,
+                    "reference_files": {
+                        "spending_data": "reference_files/shared/Merged Spend.parquet",
+                        "cache_directory": "cache/faiss"
+                    },
+                    "fuzzy_matching": {
+                        "score_cutoff": 90,
+                        "length_tolerance": 0.25,
+                        "faiss_k": 10,
+                        "faiss_dim": 32
+                    }
+                },
+                "enrichment": {
+                    "enabled": true,
+                    "reference_files": {
+                        "vendor_master": "reference_files/shared/CLS - Awarded Vendor to Distributor - 20250401.xlsx"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "global": {
+        "retention_days": 5,
+        "function_dirs": {
+            "daily_files": "daily_files",
+            "db_files": "db_files",
+            "output_files": "output_files",
+            "historical_data": "historical_data"
+        },
+        "hash_daily_columns": [
+            "Business Central Contract Number",
+            "Business Central VI",
+            "Plant ID",
+            "Local Contract Number",
+            "MMC Distributor No.",
+            "Distributor"
+        ],
+        "hash_historical_columns": [
+            "Business Central VI",
+            "Business Central Contract Number",
+            "Plant ID",
+            "Purchase UOM Price",
+            "Purchase Order Price Unit of Measure",
+            "Contract Start Date",
+            "Contract End Date",
+            "Target Value of Contract",
+            "Payment Terms",
+            "Freight Terms",
+            "Vendor Part Number",
+            "Distributor Part Number",
+            "Local Contract Number",
+            "MMC Distributor No.",
+            "Distributor",
+            "main_rec_type"
+        ]
+    },
+    "contracts": {
+        "Allscripts": {
+            "working_dir": "contracts/Allscripts",
+            "match_keyword": "Allscripts",
+            "output_format": "csv",
+            "description": "Allscripts contracts processing"
+        },
+        "SAP-TOR": {
+            "working_dir": "contracts/SAP-TOR",
+            "match_keyword": "SAP-TOR1",
+            "output_format": "csv",
+            "description": "SAP-TOR contracts processing"
+        },
+        "SSW-CVH": {
+            "working_dir": "contracts/SSW-CVH",
+            "match_keyword": "CVH1",
+            "output_format": "xlsx",
+            "description": "SSW-CVH contracts processing"
+        },
+        "SSW-MM": {
+            "working_dir": "contracts/SSW-MM",
+            "match_keyword": "MM1",
+            "output_format": "xlsx",
+            "description": "SSW-MM contracts processing"
+        },
+        "SSW-OAT": {
+            "working_dir": "contracts/SSW-OAT",
+            "match_keyword": "OAT1",
+            "output_format": "xlsx",
+            "description": "SSW-OAT contracts processing"
+        },
+        "SSW-ROV": {
+            "working_dir": "contracts/SSW-ROV",
+            "match_keyword": "ROV1",
+            "output_format": "xlsx",
+            "description": "SSW-ROV contracts processing"
+        }
+    }
+}
